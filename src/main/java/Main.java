@@ -109,38 +109,34 @@ public class Main {
 
         TruongPB nv1 = new TruongPB("Ha Truong Nguyen", 0, "20/05/2001",
                 "1951042133nguyen@ou.edu.vn",
-                10, 2 , "5/12/2021");
+                10, 2 , "5/12/2021",pb1);
 
         NhanVien nv2 = new NhanVien("Luong Duc Huy", 0, "20/05/2001",
                                     "1951042133huy@ou.edu.vn",
-                                    8, 3);
+                                    8, 3, pb1);
         NhanVien nv3 = new LapTrinhVien("Nguyen Thanh Dung", 0, "20/11/2001",
                                 "1951042133dung@ou.edu.vn",
-                                8, 3,5);
+                                8, 3, pb1,5);
         NhanVien nv4 = new KiemThuVien("Nguyen Thanh Dung", 0, "20/11/2001",
                                 "1951042133dung@ou.edu.vn",
-                                8,3,5);
-        nv1.themPB(pb1);
-        nv2.themPB(pb2);
-        nv3.themPB(pb1);
-        nv4.themPB(pb2);
+                                8,3,pb2,5);
 
         DuAn da1 = new DuAn("Xây dựng website bán hàng", "01/12/2021", "31/12/2021", 10);
         DuAn da2 = new DuAn("Xây dựng website khách sạn", "01/12/2021", "31/12/2021", 10);
-        // DuAn da3 = new DuAn();
+        DuAn da3 = new DuAn();
 
 
 //        da3.nhapThongTin();
 //        System.out.print(da3);
 //
-        // QuanLiDuAn dsDA = new QuanLiDuAn();
-        // dsDA.themDA(da1);
-        // dsDA.themDA(da2);
-        // // dsDA.themDA(da3);
-        // dsDA.hienThi();
-        // Date nbd = Support.nhapNgayThangNam(sc.nextLine());
-        // dsDA.timKiemTheoNgayBD(nbd).hienThi();
-        // dsDA.timKiemTheoTen("website").hienThi();
+        QuanLiDuAn dsDA = new QuanLiDuAn();
+        dsDA.themDA(da1);
+        dsDA.themDA(da2);
+        dsDA.themDA(da3);
+        dsDA.hienThi();
+        Date nbd = Support.nhapNgayThangNam(sc.nextLine());
+        dsDA.timKiemTheoNgayBD(nbd).hienThi();
+        dsDA.timKiemTheoTen("website").hienThi();
 //        dsDA.xoa(3);
 //        dsDA.hienThi();
 ////        dsDA.capNhat(1);
@@ -154,17 +150,17 @@ public class Main {
 //        da1.hienThi();
 //        nv1.hienThi();
 
-       QuanLiNhanVien dsNV = new QuanLiNhanVien();
-       dsNV.them(nv1);
-       dsNV.them(nv2);
-       dsNV.them(nv3);
-       dsNV.them(nv4);
+//        QuanLiNhanVien dsNV = new QuanLiNhanVien();
+//        dsNV.them(nv1);
+//        dsNV.them(nv2);
+//        dsNV.them(nv3);
+//        dsNV.them(nv4);
 //        dsNV.hienThi();
 
 //        dsNV.timKiemTheoTen("Nguyen").hienThi();
 //        Date ns = Support.nhapNgayThangNam(sc.nextLine());
 //        dsNV.timKiemTheoNgaySinh(ns).hienThi();
-       dsNV.timKiemTheoPhongBan("Kinh doanh").hienThi();;
+//        dsNV.timKiemTheoPhongBan("Kinh doanh");
 
 
 
