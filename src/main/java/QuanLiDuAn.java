@@ -30,7 +30,7 @@ public class QuanLiDuAn {
         if(vt != -1)
             this.dsDA.remove(vt);
         else {
-            System.out.println("XOÁ KHÔNG THÀNH CÔNG!!!");
+            System.out.println("XOÁ KHỒN THÀNH CÔNG!!!");
         }
     }
 

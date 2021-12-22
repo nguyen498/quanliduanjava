@@ -102,10 +102,10 @@ public class NhanVien {
         System.out.print("\tHệ số: ");
         this.heSo = sc.nextDouble();
 
-        // sc.nextLine();
-        // System.out.print("\tPhòng Ban: ");
-        // String pb = Support.chuanHoa(sc.nextLine());
-        // this.phongban = new PhongBan(pb);
+        sc.nextLine();
+        System.out.print("\tPhòng Ban: ");
+        String pb = Support.chuanHoa(sc.nextLine());
+        this.phongban = new PhongBan(pb);
     }
 
     @Override
@@ -116,8 +116,8 @@ public class NhanVien {
                         "Ngày sinh: %s\n" +
                         "Email: %s\n" +
                         "Lương cơ bản: %.1f triệu\n" +
-                        "Hệ số lương: %.1f\n" ,
-                        // "Phòng Ban: %s\n",
+                        "Hệ số lương: %.1f\n" +
+                        "Phòng Ban: %s\n",
                 this.getId(),
                 this.getHoTen(),
                 this.getRole(),
@@ -125,8 +125,8 @@ public class NhanVien {
                 Support.xuatNgayThangNam(this.ngaySinh),
                 this.getEmail(),
                 this.getLuongCoBan(),
-                this.getHeSo()
-                // this.phongban.getTenPB()
+                this.getHeSo(),
+                this.phongban.getTenPB()
         );
     }
 
