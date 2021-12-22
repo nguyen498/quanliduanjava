@@ -1,11 +1,9 @@
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.Scanner;
 
 public class Support {
-    Scanner sc = new Scanner(System.in);
 
-    public void nhapNgayThangNam(String ntn) {
+    public static Date nhapNgayThangNam(String ntn) {
         Date date = new Date();
 
         SimpleDateFormat df = new SimpleDateFormat("dd/MM/yyyy");
@@ -15,28 +13,29 @@ public class Support {
         } catch (Exception e) {
             System.out.println("Ngày tháng không hợp lệ");
         }
+
+        return date;
     }
 
-    public String xuatNgayThangNam(Date ntn) {
+    public static String xuatNgayThangNam(Date ntn) {
         if (ntn != null) {
-            SimpleDateFormat formatter = new SimpleDateFormat("dd/MM?yyyy");
+            SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
 
             return formatter.format(ntn);
         }else
             return "n/a";
     }
-    public String chuanHoa(String str) {
+
+    public static String chuanHoa(String str) {
         str = str.trim().replaceAll("\\s+", " ");
         String[] arr = str.split(" ");
 
-        String s = "";
+        StringBuilder s = new StringBuilder();
         for (String x : arr) {
-            s = s + (x.substring(0, 1).toUpperCase() + x.substring(1));
-            s = s + " ";
+            s.append(x.substring(0, 1).toUpperCase()).append(x.substring(1));
+            s.append(" ");
         }
 
-        return s.trim();
+        return s.toString().trim();
     }
-
-
 }
