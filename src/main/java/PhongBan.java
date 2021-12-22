@@ -6,7 +6,7 @@ public class PhongBan {
     private static int demPB = 0;
     private int maPB =++demPB;
     private String tenPB;
-    private NhanVien truongPB = new TruongPB();
+    private TruongPB truongPB;
     private List<NhanVien> dsNV = new ArrayList<>();
 
     Scanner sc = new Scanner(System.in);
@@ -78,11 +78,11 @@ public class PhongBan {
         this.dsNV = dsNV;
     }
 
-    public NhanVien getTruongPB() {
+    public TruongPB getTruongPB() {
         return truongPB;
     }
 
-    public void setTruongPB(NhanVien truongPB) {
+    public void setTruongPB(TruongPB truongPB) {
         this.truongPB = truongPB;
     }
 }

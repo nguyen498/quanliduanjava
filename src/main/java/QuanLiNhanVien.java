@@ -69,15 +69,16 @@ public class QuanLiNhanVien {
         return ds;
     }
 
-//    public QuanLiNhanVien timKiemTheoPhongBan (String pb){
-//        QuanLiNhanVien ds = new QuanLiNhanVien();
-//
-//        for (NhanVien nv:this.dsNV)
-//            if(nv.getPhongban().getTenPB().equalsIgnoreCase(pb))
-//                ds.them(nv);
-//
-//        return ds;
-//    }
+   public QuanLiNhanVien timKiemTheoPhongBan (String pb){
+       QuanLiNhanVien ds = new QuanLiNhanVien();
+
+       for (NhanVien nv:this.dsNV)
+            // System.out.print(nv.getPhongban().getTenPB());
+           if(nv.getPhongban().getTenPB().equalsIgnoreCase(pb))
+               ds.them(nv);
+
+       return ds;
+   }
 
     public List<NhanVien> getDsNV() {
         return dsNV;

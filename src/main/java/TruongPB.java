@@ -45,7 +45,7 @@ public class TruongPB extends NhanVien {
                             "Email: %s\n" +
                             "Lương cơ bản: %.1f\n" +
                             "Hệ số lương: %.1f\n" +
-                            "Phòng ban QL: %s\n" +
+                            // "Phòng ban QL: %s\n" +
                             "Ngày nhận chức: %s",
                             super.getId(),
                             super.getHoTen(),
@@ -54,7 +54,7 @@ public class TruongPB extends NhanVien {
                             super.getEmail(),
                             super.getLuongCoBan(),
                             super.getHeSo(),
-                            this.pbql.getTenPB(),
+                            // this.pbql.getTenPB(),
                             Support.xuatNgayThangNam(ngayNhanChuc)
                 );
     }
