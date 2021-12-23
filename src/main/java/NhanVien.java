@@ -116,8 +116,8 @@ public class NhanVien {
                         "Ngày sinh: %s\n" +
                         "Email: %s\n" +
                         "Lương cơ bản: %.1f triệu\n" +
-                        "Hệ số lương: %.1f\n" ,
-                        // "Phòng Ban: %s\n",
+                        "Hệ số lương: %.1f" ,
+//                         "Phòng Ban: %s\n",
                 this.getId(),
                 this.getHoTen(),
                 this.getRole(),
@@ -126,7 +126,7 @@ public class NhanVien {
                 this.getEmail(),
                 this.getLuongCoBan(),
                 this.getHeSo()
-                // this.phongban.getTenPB()
+//                this.phongban.getTenPB()
         );
     }
 
@@ -135,6 +135,22 @@ public class NhanVien {
         System.out.print("===Danh sách dự án===\n");
         dsDA.forEach(da -> System.out.printf("ID: %d\t Tên NV: %s\n", da.getMaDA(), da.getTenDA()));
     }
+
+    public void hienThiNVPB(){
+        System.out.printf("Tên NV: %s\n", this.hoTen);
+        System.out.printf("Phòng Ban: %s\n", this.phongban.getTenPB());
+    }
+
+    public void hienThiPB(){
+        System.out.printf("Phòng Ban: %s\n", this.phongban.getTenPB());
+    }
+
+    public void hienThiDA(){
+        System.out.printf("Tên NV: %s\n", this.hoTen);
+        System.out.println("===Danh sách dự án===");
+        this.dsDA.forEach(da -> System.out.println(da.getTenDA()));
+    }
+
 
     /*Phuong thuc getter setter của class NhanVien*/
     public int getId() {

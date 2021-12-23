@@ -16,6 +16,26 @@ public class QuanLiDuAn {
         });
     }
 
+    public void hienThiDA(){
+        if (this.getDsDA().isEmpty()) {
+            System.out.println("\t\t### KHÔNG CÓ DỮ LIỆU ###\n");
+        } else {
+            this.dsDA.forEach(da -> {
+                System.out.printf("ID: %d\t Tên DA: %s\n", da.getMaDA(), da.getTenDA());
+            });
+        }
+    }
+
+    public void hienThiDANV(int id){
+        if (this.getDsDA().isEmpty()) {
+            System.out.println("\n\t\t### KHÔNG CÓ DỮ LIỆU ###");
+        } else {
+            this.dsDA.get(id-1).getDsNV().forEach(nv ->
+                    System.out.printf("ID: %d\t Tên NV: %s\n", nv.getId(), nv.getHoTen())
+            );
+        }
+    }
+
     public int isExist (int id){
         for(int i = 0; i < this.dsDA.size(); i++){
             if(this.dsDA.get(i).getMaDA() == id)
@@ -61,6 +81,10 @@ public class QuanLiDuAn {
                 ds.themDA(da);
 
         return ds;
+    }
+
+    public void sapXep(){
+        this.dsDA.sort((da1, da2)-> Double.compare(da1.getTongKinhPhi(), da2.getTongKinhPhi()));
     }
 
     public List<DuAn> getDsDA() {

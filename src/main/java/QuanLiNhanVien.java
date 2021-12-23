@@ -11,12 +11,43 @@ public class QuanLiNhanVien {
         } else {
             this.getDsNV().forEach((nv) -> {
                 System.out.println(nv);
+                nv.hienThiPB();
                 System.out.print("================\n");
             });
 
             System.out.println();
         }
     }
+
+    public void hienThiNVPB(){
+        if (this.getDsNV().isEmpty()) {
+            System.out.println("\n\t\t### KHÔNG CÓ DỮ LIỆU ###");
+        } else {
+            this.getDsNV().forEach((nv) -> {
+                nv.hienThiNVPB();
+                System.out.print("================\n");
+            });
+
+            System.out.println();
+        }
+    }
+
+    public void hienThiNV(){
+        if (this.getDsNV().isEmpty()) {
+            System.out.println("\n\t\t### KHÔNG CÓ DỮ LIỆU ###");
+        } else {
+            this.getDsNV().forEach((nv) -> {
+                System.out.printf("ID: %d\t Tên NV: %s\n", nv.getId(), nv.getHoTen());
+            });
+
+            System.out.println();
+        }
+    }
+
+    public void hienThiNVDA(int id){
+        this.dsNV.get(id-1).hienThiDA();
+    }
+
 
     public int isExist (int id){
         for(int i = 0; i < this.getDsNV().size(); i++){

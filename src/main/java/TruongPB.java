@@ -15,14 +15,20 @@ public class TruongPB extends NhanVien {
         catch(ParseException ex){System.out.println("Loi: " + ex);}
     }
 
+
+
     public TruongPB(String ten, int gt, String ngaySinh, String email,
                     double luongCB, double heSo, String ngayNhanChuc, PhongBan pbql) {
 
         super(ten, gt, ngaySinh, email, luongCB, heSo);
         try{this.ngayNhanChuc = df.parse(ngayNhanChuc);}
         catch(ParseException ex){System.out.println("Loi: " + ex);}
-        this.pbql = pbql;
+        this.setPbql(pbql);
         pbql.themTP(this);
+    }
+
+    public void themPBQL(PhongBan pb){
+        this.pbql = pb;
     }
 
     @Override
@@ -45,7 +51,7 @@ public class TruongPB extends NhanVien {
                             "Email: %s\n" +
                             "Lương cơ bản: %.1f\n" +
                             "Hệ số lương: %.1f\n" +
-                            // "Phòng ban QL: %s\n" +
+                             "Phòng ban QL: %s\n" +
                             "Ngày nhận chức: %s",
                             super.getId(),
                             super.getHoTen(),
@@ -54,9 +60,14 @@ public class TruongPB extends NhanVien {
                             super.getEmail(),
                             super.getLuongCoBan(),
                             super.getHeSo(),
-                            // this.pbql.getTenPB(),
+                            this.pbql.getTenPB(),
                             Support.xuatNgayThangNam(ngayNhanChuc)
                 );
+    }
+
+    public void hienThiPBQL(){
+        System.out.printf("Tên NV: %s\n", super.getHoTen());
+        System.out.printf("Phòng Ban QL: %s\n", this.pbql.getTenPB());
     }
 
 
@@ -66,5 +77,13 @@ public class TruongPB extends NhanVien {
 
     public void setNgayNhanChuc(Date ngayNhanChuc) {
         ngayNhanChuc = ngayNhanChuc;
+    }
+
+    public PhongBan getPbql() {
+        return pbql;
+    }
+
+    public void setPbql(PhongBan pbql) {
+        this.pbql = pbql;
     }
 }

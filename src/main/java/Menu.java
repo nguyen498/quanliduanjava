@@ -14,6 +14,7 @@ public class Menu {
         System.out.println("4.Tìm kiếm.");
         System.out.println("5.Xoá nhân viên.");
         System.out.println("6.Cập nhật lại thông tin nhân viên.");
+        System.out.println("7.Tính lương.");
         System.out.println("0.Thoát.");
     }
 
@@ -33,6 +34,7 @@ public class Menu {
         System.out.println("4.Tìm kiếm.");
         System.out.println("5.Xoá dự án.");
         System.out.println("6.Cập nhật lại thông tin dự án.");
+        System.out.println("7.Sắp xếp dự án theo tổng kinh phí.");
         System.out.println("0.Thoát.");
     }
 

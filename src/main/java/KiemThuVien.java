@@ -4,9 +4,8 @@ public class KiemThuVien extends NhanVien{
     public KiemThuVien(){this.role = "(Lập kiểm viên)";}
 
     public KiemThuVien(String ten, int gt,String ngaySinh,
-                       String email, double luongCB, double heSo, int soLoi){
+                       String email, double luongCB, double heSo){
         super(ten, gt, ngaySinh, email, luongCB, heSo);
-        this.soLoi = soLoi;
         this.setRole("(Kiểm thử viên)");
     }
 
@@ -19,19 +18,10 @@ public class KiemThuVien extends NhanVien{
 
     @Override
     public double tinhLuong() {
-        return super.tinhLuong() + this.soLoi*0.2;
-    }
+        System.out.print("Nhập số lỗi phát hiện: ");
+        this.soLoi = sc.nextInt();
 
-    @Override
-    public String toString() {
-        return super.toString() + "Số lỗi phát hiện: " + this.soLoi + "\n";
-    }
-
-    @Override
-    public void nhapThongTinNV() {
-        super.nhapThongTinNV();
-        System.out.print("\tNhập số giờ làm thêm: ");
-        soLoi = sc.nextInt();
+        return super.tinhLuong() + this.soLoi * 0.2;
     }
 
     public int getSoLoi() {
