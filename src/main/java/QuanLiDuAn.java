@@ -30,9 +30,10 @@ public class QuanLiDuAn {
         if (this.getDsDA().isEmpty()) {
             System.out.println("\n\t\t### KHÔNG CÓ DỮ LIỆU ###");
         } else {
-            this.dsDA.get(id-1).getDsNV().forEach(nv ->
-                    System.out.printf("ID: %d\t Tên NV: %s\n", nv.getId(), nv.getHoTen())
-            );
+            System.out.printf("Trưởng dự án: %s\n", this.dsDA.get(id-1).getTruongDA().getHoTen());
+            this.dsDA.get(id-1).getDsNV().forEach(nv -> {
+                System.out.printf("ID: %d\t Tên NV: %s\n", nv.getId(), nv.getHoTen());
+            });
         }
     }
 

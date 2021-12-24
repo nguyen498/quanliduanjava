@@ -36,6 +36,7 @@ public class Menu {
         System.out.println("5.Xoá dự án.");
         System.out.println("6.Cập nhật lại thông tin dự án.");
         System.out.println("7.Sắp xếp dự án theo tổng kinh phí.");
+        System.out.println("8.Thêm nhân viên vào dự án.");
         System.out.println("0.Thoát.");
     }
 

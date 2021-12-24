@@ -137,13 +137,19 @@ public class NhanVien {
     }
 
     public void hienThiPB(){
-        System.out.printf("Phòng Ban: %s\n", this.phongban.getTenPB());
+        try {
+            System.out.printf("Phòng Ban: %s\n", this.phongban.getTenPB());
+        }catch (NullPointerException ex)
+        {System.out.println("Phong ban: chua ro");}
     }
 
     public void hienThiDA(){
         System.out.printf("Tên NV: %s\n", this.hoTen);
         System.out.println("===Danh sách dự án===");
-        this.dsDA.forEach(da -> System.out.println(da.getTenDA()));
+        if (this.dsDA.isEmpty())
+            System.out.println("## KHÔNG CÓ DỮ LIỆU ##");
+        else
+            this.dsDA.forEach(da -> System.out.println(da.getTenDA()));
     }
 
 

@@ -8,13 +8,6 @@ public class Main {
         PhongBan pb1 = new PhongBan("IT");//1
         PhongBan pb2 = new PhongBan("Kinh Doanh");//2
 
-        TruongPB nv7 = new TruongPB("Nguyễn Thị Mai", 1, "18/01/2001",
-                "1951042133mai@ou.edu.vn",
-                10, 2 , "5/7/2021");
-        nv7.themPBQL(pb2);
-        nv7.themPB(pb2);
-        pb2.themTP(nv7);
-
         TruongPB nv1 = new TruongPB("Ha Truong Nguyen", 0, "20/05/2001",
                 "1951042133nguyen@ou.edu.vn",
                 10, 2 , "5/12/2021");
@@ -52,17 +45,27 @@ public class Main {
         nv6.themPB(pb2);
         pb2.themNVVaoPB(nv6);
 
+        TruongPB nv7 = new TruongPB("Nguyễn Thị Mai", 1, "18/01/2001",
+                "1951042133mai@ou.edu.vn",
+                10, 2 , "5/7/2021");
+        nv7.themPBQL(pb2);
+        nv7.themPB(pb2);
+        pb2.themTP(nv7);
+
         DuAn da1 = new DuAn("Xây dựng website bán hàng", "02/12/2021", "31/12/2021", 15);
+        da1.themTDA(nv1);
         da1.themNVVaoDA(nv1);
         da1.themNVVaoDA(nv3);
         da1.themNVVaoDA(nv2);
 
         DuAn da2 = new DuAn("Xây dựng website khách sạn", "01/12/2021", "31/12/2021", 10);
+        da2.themTDA(nv2);
         da2.themNVVaoDA(nv2);
         da2.themNVVaoDA(nv5);
         da2.themNVVaoDA(nv6);
 
         DuAn da3 = new DuAn("Xây dựng website đặt vé máy bay", "01/12/2021", "31/12/2021", 30);
+        da3.themTDA(nv3);
         da3.themNVVaoDA(nv4);
         da3.themNVVaoDA(nv3);
         da3.themNVVaoDA(nv1);
@@ -118,6 +121,11 @@ public class Main {
                                 NhanVien nvthem = new NhanVien();
                                 nvthem.nhapThongTinNV();
                                 dsNV.them(nvthem);
+                                dsPB.hienThi();
+                                System.out.print("Chọn phòng ban: ");
+                                int idx = sc.nextInt();
+                                nvthem.themPB(dsPB.getDsPB().get(idx-1));
+                                dsPB.getDsPB().get(idx-1).themNVVaoPB(nv1);
                                 dsNV.hienThiNV();
                                 break;
                             case 4:
@@ -254,6 +262,20 @@ public class Main {
                                 dsDA.sapXep();
                                 dsDA.hienThi();
                                 System.out.println("==============\n");
+                                break;
+                            case 8:
+                                System.out.println("===DANH SÁCH DỰ ÁN===");
+                                dsDA.hienThiDA();
+                                System.out.println("===DANH SÁCH NHÂN VIÊN===");
+                                dsNV.hienThiNV();
+                                System.out.print("Nhập id dự án muốn thêm: ");
+                                int idxDA = sc.nextInt();
+                                System.out.print("Nhập id nhân viên muốn thêm vào dự án: ");
+                                int idxNV = sc.nextInt();
+                                dsDA.getDsDA().get(idxDA-1).themNVVaoDA(dsNV.getDsNV().get(idxNV-1));
+                                dsNV.getDsNV().get(idxNV-1).themDA(dsDA.getDsDA().get(idxDA-1));
+                                dsDA.getDsDA().get(idxDA-1).hienThi();
+                                System.out.println("");
                                 break;
                             default:
                                 System.out.println("");

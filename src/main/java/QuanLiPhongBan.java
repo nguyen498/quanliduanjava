@@ -13,8 +13,8 @@ public class QuanLiPhongBan {
             System.out.println("\n\t\t### KHÔNG CÓ DỮ LIỆU ###");
         } else {
             System.out.println("Danh sách phòng ban: ");
-            this.dsPB.forEach((bp) -> {
-                System.out.print(bp.toString());
+            this.dsPB.forEach((pb) -> {
+                System.out.print(pb.toString() + "\n");
             });
 
             System.out.println("");
