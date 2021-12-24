@@ -3,6 +3,7 @@ public class Menu {
     public static void MenuTong(){
         System.out.println("1.Quản lí nhân viên.");
         System.out.println("2.Quản lí Dự án.");
+        System.out.println("3.Xem nhân viên của các phòng ban.");
         System.out.println("0.Thoát.");
     }
 

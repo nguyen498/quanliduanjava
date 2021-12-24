@@ -3,41 +3,54 @@ import java.util.Scanner;
 
 public class Main {
     public static void main (String[] args){
-       Scanner sc = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
 
         PhongBan pb1 = new PhongBan("IT");//1
         PhongBan pb2 = new PhongBan("Kinh Doanh");//2
+
+        TruongPB nv7 = new TruongPB("Nguyễn Thị Mai", 1, "18/01/2001",
+                "1951042133mai@ou.edu.vn",
+                10, 2 , "5/7/2021");
+        nv7.themPBQL(pb2);
+        nv7.themPB(pb2);
+        pb2.themTP(nv7);
 
         TruongPB nv1 = new TruongPB("Ha Truong Nguyen", 0, "20/05/2001",
                 "1951042133nguyen@ou.edu.vn",
                 10, 2 , "5/12/2021");
         nv1.themPBQL(pb1);
         nv1.themPB(pb1);
+        pb1.themTP(nv1);
 
         NhanVien nv2 = new NhanVien("Luong Duc Huy", 0, "13/05/2001",
                 "1951042133huy@ou.edu.vn",
                 8, 3);
         nv2.themPB(pb2);
+        pb2.themNVVaoPB(nv2);
 
-        NhanVien nv3 = new LapTrinhVien("Lê Thị Thuỷ", 0, "11/6/2001",
+        NhanVien nv3 = new LapTrinhVien("Lê Thị Thuỷ", 1, "11/6/2001",
                 "1951042133thuy@ou.edu.vn",
                 8, 3);
         nv3.themPB(pb1);
+        pb1.themNVVaoPB(nv3);
 
         NhanVien nv4 = new KiemThuVien("Nguyen Thanh Dung", 0, "20/11/2001",
                 "1951042133dung@ou.edu.vn",
                 8,3);
         nv4.themPB(pb1);
+        pb1.themNVVaoPB(nv4);
 
         NhanVien nv5 = new ThietKeVien("Vương Vĩnh Hoà", 0, "20/11/2001",
                 "1951042133huy@ou.edu.vn",
                 8,3);
         nv5.themPB(pb1);
+        pb1.themNVVaoPB(nv5);
 
         NhanVien nv6 = new NhanVien("Trần Thị Liên", 1, "18/04/2001",
-                "1951042133huy@ou.edu.vn",
+                "1951042133lien@ou.edu.vn",
                 8, 3);
         nv6.themPB(pb2);
+        pb2.themNVVaoPB(nv6);
 
         DuAn da1 = new DuAn("Xây dựng website bán hàng", "02/12/2021", "31/12/2021", 15);
         da1.themNVVaoDA(nv1);
@@ -66,6 +79,7 @@ public class Main {
         dsNV.them(nv4);
         dsNV.them(nv5);
         dsNV.them(nv6);
+        dsNV.them(nv7);
 
         QuanLiPhongBan dsPB = new QuanLiPhongBan();
         dsPB.themPB(pb1);
@@ -136,7 +150,7 @@ public class Main {
                                             dsNV.timKiemTheoPhongBan(pb).hienThiNV();
                                             break;
                                         default:
-                                            System.out.println("Lựa chọn không hợp lệ!!!");
+                                            System.out.println();
                                     }
                                 }while (choose4 != 0);
                                 break;
@@ -165,7 +179,7 @@ public class Main {
                                 System.out.println("==============");
                                 break;
                             default:
-                                System.out.println("Lựa chọn không hợp lệ");
+                                System.out.println("");
                         }
                     }while(choose2 != 0);
                     break;
@@ -216,7 +230,7 @@ public class Main {
                                             dsDA.timKiemTheoNgayBD(ns).hienThiDA();
                                             break;
                                         default:
-                                            System.out.println("Lựa chọn không hợp lệ");
+                                            System.out.println("");
                                     }
                                 }while (choose5 != 0);
                                 break;
@@ -242,96 +256,17 @@ public class Main {
                                 System.out.println("==============\n");
                                 break;
                             default:
-                                System.out.println("Lựa chọn không hợp lệ!!!");
+                                System.out.println("");
                         }
                     }while (choose3 != 0);
                     break;
+                case 3:
+                    dsPB.hienThiNVCuaPB();
+                    System.out.println("");
+                    break;
                 default:
-                    System.out.println("Lựa chọn không hợp lệ!!!");
+                    System.out.println("==EXIT==");
             }
         }while (choose1 !=0);
-
-
-
-
-
-
-
-
-
-
-
-//
-//        QuanLiDuAn dsDA = new QuanLiDuAn();
-//        dsDA.themDA(da1);
-//        dsDA.themDA(da2);
-//        dsDA.themDA(da3);
-//        dsDA.hienThi();
-//        dsDA.sapXep();
-//        dsDA.hienThi();
-
-//        System.out.println(nv1);
-
-        // // dsDA.themDA(da3);
-        // dsDA.hienThi();
-        // Date nbd = Support.nhapNgayThangNam(sc.nextLine());
-        // dsDA.timKiemTheoNgayBD(nbd).hienThi();
-        // dsDA.timKiemTheoTen("website").hienThi();
-//        dsDA.xoa(3);
-//        dsDA.hienThi();
-////        dsDA.capNhat(1);
-//        dsDA.hienThi();
-//
-//        da1.themTDA(nv1);
-//        da1.themNVVaoDA(nv2);
-//        da1.themNVVaoDA(nv3);
-//        da1.themNVVaoDA(nv4);
-//        nv1.themDA(da2);
-//        da1.hienThi();
-//        nv1.hienThi();
-
-//       QuanLiNhanVien dsNV = new QuanLiNhanVien();
-//       dsNV.them(nv1);
-//       dsNV.them(nv2);
-//       dsNV.them(nv3);
-//       dsNV.them(nv4);
-//       dsNV.hienThi();
-
-//        dsNV.timKiemTheoTen("Nguyen").hienThi();
-//        Date ns = Support.nhapNgayThangNam(sc.nextLine());
-//        dsNV.timKiemTheoNgaySinh(ns).hienThi();
-//       dsNV.timKiemTheoPhongBan("Kinh doanh").hienThiNVPB();
-
-
-
-
-//        System.out.println(pb1);
-//        System.out.println(pb2);
-//        pb1.hienThi();
-//        System.out.println(nv1);
-//        System.out.println(nv2);
-//        System.out.println(nv3);hj
-//        System.out.println(nv4);
-
-
-
-//        QuanLiPhongBan dsPB =  new QuanLiPhongBan();
-//        dsPB.themPB(pb1);
-//        dsPB.themPB(pb2);
-//        dsPB.hienThiNVCuaPB();
-//        System.out.println(nv1.tinhLuong());
-//        System.out.println(nv2.tinhLuong());
-//        System.out.println(nv3.tinhLuong());
-//        System.out.println(nv4.tinhLuong());
-//        NhanVien nv5 = new TruongPB();
-//        NhanVien nv6 = new LapTrinhVien();
-//        NhanVien nv7 = new KiemThuVien();
-//        nv5.nhapThongTinNV();
-//        nv6.nhapThongTinNV();
-//        nv7.nhapThongTinNV();
-//        System.out.print(nv5);
-//        System.out.print(nv6);
-//        System.out.print(nv7);
-
     }
 }

@@ -36,7 +36,7 @@ public class PhongBan {
     }
 
     public void nhapThongTin() {
-        System.out.print("\tTên bộ phận: ");
+        System.out.print("\tTên phòng ban: ");
         this.tenPB = sc.nextLine();
     }
 

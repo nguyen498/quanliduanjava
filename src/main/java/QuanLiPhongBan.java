@@ -26,8 +26,8 @@ public class QuanLiPhongBan {
             System.out.println("\n\t\t### KHÔNG CÓ DỮ LIỆU ###");
         }else {
             this.dsPB.forEach(pb -> {
-                System.out.print(pb.toString());
                 pb.hienThi();
+                System.out.println("");
             });
         }
     }

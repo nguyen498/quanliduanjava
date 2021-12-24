@@ -101,11 +101,6 @@ public class NhanVien {
 
         System.out.print("\tHệ số: ");
         this.heSo = sc.nextDouble();
-
-        // sc.nextLine();
-        // System.out.print("\tPhòng Ban: ");
-        // String pb = Support.chuanHoa(sc.nextLine());
-        // this.phongban = new PhongBan(pb);
     }
 
     @Override
